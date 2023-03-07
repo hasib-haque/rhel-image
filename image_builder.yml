@@ -1,8 +1,8 @@
+---
 - name: Build RHEL image with Image Builder
-  hosts: localhost
+  hosts: all
   become: true
   vars:
-    rhel_image_update_host: false
     rhel_image_create_user: false
     rhel_image_git_remote_repo: file:///tmp/rhel-image-blueprints.git
     rhel_image_git_repo_checkout: master
@@ -11,9 +11,10 @@
     rhel_image_output_type: ami
     rhel_image_download_dir: /tmp/images
   tasks:
-    - name: Install myllynen.rhel_image role
+    - name: Install Git
       become: true
-      command: ansible-galaxy install myllynen.rhel_image
-    - name: Build RHEL image
-      include_role:
-        name: myllynen.rhel_image.rhel_image
+      package:
+        name: git
+        state: present
+    - name: Install myllynen.rhel_image collection
+      command: ansible-galaxy collection install git+https://github.com/hasib-haque/rhel-image.git,master
