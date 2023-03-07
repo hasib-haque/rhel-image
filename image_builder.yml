@@ -10,5 +10,10 @@
     rhel_image_size_kb: 20480
     rhel_image_output_type: ami
     rhel_image_download_dir: /tmp/images
-  roles:
-    - myllynen.rhel_image.rhel_image
+  tasks:
+    - name: Install myllynen.rhel_image role
+      become: true
+      command: ansible-galaxy install myllynen.rhel_image
+    - name: Build RHEL image
+      include_role:
+        name: myllynen.rhel_image.rhel_image
