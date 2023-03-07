@@ -1,6 +1,6 @@
 ---
 - name: Build RHEL image with Image Builder
-  hosts: all
+  hosts: localhost
   become: true
   vars:
     rhel_image_create_user: false
