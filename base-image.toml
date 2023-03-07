@@ -154,6 +154,12 @@ version = "*"
 name = "ansible"
 version = "*"
 
+# Git
+[[packages]]
+name = "git"
+version = "*"
+
+
 [customizations.openscap]
 datastream = "/usr/share/xml/scap/ssg/content/ssg-rhel8-ds.xml"
 profile_id = "xccdf_org.ssgproject.content_profile_stig_gui"
