@@ -28,7 +28,7 @@ mountpoint = "swap"
 size = 2147483648
 [[customizations.filesystem]]
 mountpoint = "/"
-### 8G 
+### 20G 
 size = 8589934592
 [[customizations.filesystem]]
 mountpoint = "/home"
@@ -50,11 +50,6 @@ size = 2147483648
 [[customizations.filesystem]]
 mountpoint = "/var/log/audit"
 
-size = 1073741824
-[[customizations.filesystem]]
-mountpoint = "/var/tmp"
-
-size = 1073741824
 
 #
 # Locale
